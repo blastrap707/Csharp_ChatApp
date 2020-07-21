@@ -1,0 +1,26 @@
+﻿@model IList<iRally.Model.MessageInfo>
+
+@{
+    ViewData["Title"] = "iRally";
+}
+
+<table>
+    <tbody>
+        @for (var i = Model.Count - 1; i >= 0; i--)
+        {
+            <tr>
+                <td class="p">@Model[i].PostAt</td>
+                <td class="balloon2-right">@Model[i].Message</td>
+                <td class="p">@Model[i].UserId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <form asp-action="Index">
+        <div class="addMessage">
+            <input name="message" type="text" class="messageEnter" />
+            <input type="submit" value="送信" class="sendMessage" />
+        </div>
+    </form>
+</div>
