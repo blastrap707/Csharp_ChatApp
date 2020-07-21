@@ -24,10 +24,18 @@ namespace iRally.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(UserInfo userInfo)
         {
-            if (userInfo.UserId == null)
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Login));
+                return View(userInfo);
             }
+            //if (userInfo.UserId == null)
+            //{
+            //    return RedirectToAction(nameof(Login));view
+            //}
+
+            //パスワードのちぇっくに失敗したとする
+            ModelState.AddModelError("", "userId or password is incorrect. ");
+
             var claims = new[] {
                     new Claim(ClaimTypes.NameIdentifier, userInfo.UserId),
                 };

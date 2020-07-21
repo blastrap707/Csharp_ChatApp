@@ -7,10 +7,10 @@
     <div class="form">
         <label asp-for="UserId">ユーザーID</label>
         <input asp-for="UserId" class="form-control" placeholder="ユーザーIDを入力">
+        <span asp-validation-for="UserId"></span>
     </div>
     <div class="form">
         <label asp-for="Password">パスワード</label>
         <input asp-for="Password" type="password" class="form-control" placeholder="パスワードを入力">
     </div>
-    <button type="submit" class="btn btn-primary">ログイン</button>
 </form>

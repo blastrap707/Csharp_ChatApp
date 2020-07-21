@@ -16,7 +16,7 @@ namespace iRally.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var history = Messages.GetChatHistory();
+            var history = DBmanager.GetChatHistory();
             return View(history);
         }
 
@@ -24,7 +24,7 @@ namespace iRally.Controllers
         public IActionResult Index(string message)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Messages.AddMessageInfo(message, userId);
+            DBmanager.AddMessageInfo(message, userId);
             return RedirectToAction(nameof(Index));
         }
     }

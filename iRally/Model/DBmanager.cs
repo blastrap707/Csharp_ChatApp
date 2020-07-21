@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iRally.Model
 {
-    public class Messages
+    public class DBmanager
     {
         public static List<MessageInfo> GetChatHistory()
         {
