@@ -1,0 +1,26 @@
+﻿@*@model iRally.Model.UserInfo
+
+    @{
+        ViewData["Title"] = "Register";
+    }
+
+    <h3>入力されたユーザーIDが存在しません。</h3>
+    <h1>ユーザー新規登録</h1>
+    <form>
+        <div class="form">
+            <label asp-for="UserName">ユーザーID</label>
+            <input asp-for="UserName" class="form-control" placeholder="名前を入力">
+            <span asp-validation-for="UserName"></span>
+        </div>
+        <div class="form">
+            <label asp-for="UserId">ユーザーID</label>
+            <input asp-for="UserId" class="form-control" placeholder="ユーザーIDを入力">
+            <span asp-validation-for="UserId"></span>
+        </div>
+        <div class="form">
+            <label asp-for="Password">パスワード</label>
+            <input asp-for="Password" type="password" class="form-control" placeholder="パスワードを入力">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">ログイン</button>
+    </form>*@

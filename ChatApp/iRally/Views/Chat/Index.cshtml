@@ -1,0 +1,26 @@
+﻿@model IList<iRally.Model.MessageInfo>
+
+@{
+    ViewData["Title"] = "iRally";
+}
+
+@foreach (var user in Model.Reverse())
+{
+    <h5 class="userId">@user.UserId </h5>
+    <table>
+        <tbody>
+            <tr>
+                <td class="balloon2-left">@user.Message</td>
+                <td class="p">@user.PostAt</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<div>
+    <form asp-action="Index">
+        <div class="addMessage">
+            <input name="message" type="text" class="messageEnter" />
+            <input type="submit" value="送信" class="sendMessage" />
+        </div>
+    </form>
+</div>
